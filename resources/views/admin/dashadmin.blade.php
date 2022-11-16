@@ -41,10 +41,15 @@
     <main class="m-10">
         <div class="overflow-hidden bg-white shadow rounded-lg">
             <div class="px-4 py-5 sm:px-6">
-                <h3 class="text-lg font-medium leading-6 text-gray-900">Daftar Paket Yang Tersedia</h3>
+                <div class="flex h-16 items-center justify-between">
+                    <h3 class="text-lg font-medium leading-6 text-gray-900">Daftar Paket Yang Tersedia</h3>
+                    <a href="{{ url('/tambah-paket') }}"><button
+                            class="bg-blue-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+                            aria-current="page">Tambah Paket</button></a>
+                </div>
             </div>
             <div class="border-t border-gray-200">
-                <div class="grid grid-cols-1 gap-y-16 md:grid-cols-2 md:gap-x-12 md:gap-y-16">
+                <div class="grid p-3 grid-cols-1 gap-y-16 md:grid-cols-2 md:gap-x-12 md:gap-y-16">
                     @foreach ($data as $beli)
                         <div class="relative shadow-xl p-5 flex flex-col gap-6 sm:flex-row md:flex-col lg:flex-row">
                             <div
@@ -60,10 +65,6 @@
                                 <p class="text-lg font-semibold leading-8 text-gray-900">{{ $beli->nama_paket }}</p>
                                 <p class="mt-2 text-base leading-7 text-gray-600">{{ $beli->keterangan }}</p>
                                 <p class="text-lg font-semibold leading-8 text-gray-900">{{ $beli->harga }}</p>
-
-                                <a href="{{ url('beli-paket/' . $beli->id) }}"><button type="submit"
-                                        class="bg-blue-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-                                        aria-current="page">Beli Paket</button></a>
                             </div>
                         </div>
                     @endforeach

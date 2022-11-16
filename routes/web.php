@@ -40,3 +40,5 @@ Route::get('/beli-paket/{id}', [BeliController::class, 'belipaket'])->middleware
 
 //dashboard admin
 Route::get('/dashboard-admin', [DashadminController::class, 'view'])->middleware('admin');
+Route::get('/tambah-paket', [DashadminController::class, 'paketview'])->middleware('admin');
+Route::post('/nambah-paket', [DashadminController::class, 'tambah'])->middleware('admin');
