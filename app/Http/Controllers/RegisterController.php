@@ -31,6 +31,7 @@ class RegisterController extends Controller
         $item->nama = $request->nama;
         $item->email = $request->email;
         $item->role = "guest";
+        $item->role = "Belum membeli paket";
         $item->password = Hash::make($request->password);
         $item->save();
         return redirect('/login')->with(['success' => 'berhasil mendaftar']);;

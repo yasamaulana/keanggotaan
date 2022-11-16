@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_paket');
             $table->string('harga');
+            $table->string('keterangan');
             $table->timestamps();
         });
     }
