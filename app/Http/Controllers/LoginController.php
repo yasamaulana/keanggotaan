@@ -20,7 +20,7 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/');
+            return redirect()->intended('/dashboard');
         }
 
         return back()->with([
@@ -35,6 +35,6 @@ class LoginController extends Controller
 
         request()->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/login');
     }
 }

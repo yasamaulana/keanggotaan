@@ -18,9 +18,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
-Route::get('login', [LoginController::class, 'view']);
+//login
+Route::get('login', [LoginController::class, 'view'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
+Route::post('logout', [LoginController::class, 'logout']);
 
 //register
 Route::get('register', [RegisterController::class, 'view']);
 Route::post('register', [RegisterController::class, 'register']);
+
+//dashbard
+Route::get('/dashboard', function () {
+    return view('dash.dashboard');
+})->middleware('auth');
