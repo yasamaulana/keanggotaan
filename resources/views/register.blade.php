@@ -14,14 +14,20 @@
     <div class="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div class="w-full max-w-md space-y-8">
             <div>
-                <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Sign in to your account
+                <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Register
                 </h2>
                 </p>
             </div>
-            <form class="mt-8 space-y-6" action="{{ url('login') }}" method="POST">
+            <form class="mt-8 space-y-6" action="{{ url('register') }}" method="POST">
                 @csrf
                 <input type="hidden" name="remember" value="true">
                 <div class="-space-y-px rounded-md shadow-sm">
+                    <div>
+                        <label for="email-address" class="sr-only">Nama</label>
+                        <input id="email-address" name="nama" type="text" required
+                            class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                            placeholder="Nama Lengkap">
+                    </div>
                     <div>
                         <label for="email-address" class="sr-only">Email address</label>
                         <input id="email-address" name="email" type="email" autocomplete="email" required
@@ -37,10 +43,10 @@
                 </div>
 
                 <div class="flex items-center justify-between">
-                    Sudah punya akun?
+                    Suda punya akun?
 
                     <div class="text-sm">
-                        <a href="/register" class="font-medium text-indigo-600 hover:text-indigo-500">Register</a>
+                        <a href="/login" class="font-medium text-indigo-600 hover:text-indigo-500">Login</a>
                     </div>
                 </div>
 
