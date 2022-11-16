@@ -26,7 +26,7 @@
                                     class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
                                     aria-current="page">Dashboard</a>
 
-                                <a href="#"
+                                <a href="/beli"
                                     class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pembelian
                                     Paket</a>
                             </div>

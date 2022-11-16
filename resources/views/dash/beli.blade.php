@@ -27,8 +27,10 @@
                                 <p class="text-lg font-semibold leading-8 text-gray-900">{{ $beli->nama_paket }}</p>
                                 <p class="mt-2 text-base leading-7 text-gray-600">{{ $beli->keterangan }}</p>
                                 <p class="text-lg font-semibold leading-8 text-gray-900">{{ $beli->harga }}</p>
-                                <button class="bg-blue-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-                                    aria-current="page">Beli Paket</button>
+
+                                <a href="{{ url('beli-paket/' . $beli->id) }}"><button type="submit"
+                                        class="bg-blue-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+                                        aria-current="page">Beli Paket</button></a>
                             </div>
                         </div>
                     @endforeach

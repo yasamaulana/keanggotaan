@@ -34,3 +34,5 @@ Route::get('/dashboard', function () {
 })->middleware('auth');
 
 Route::get('/beli', [BeliController::class, 'view'])->middleware('auth');
+Route::post('/beli', [BeliController::class, 'beli'])->middleware('auth');
+Route::get('/beli-paket/{id}', [BeliController::class, 'belipaket'])->middleware('auth');
