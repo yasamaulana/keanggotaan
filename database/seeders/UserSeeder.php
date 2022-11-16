@@ -19,7 +19,14 @@ class UserSeeder extends Seeder
             'nama' => 'Yasa',
             'email' => 'yasamaulana1@gmail.com',
             'password' => Hash::make('yasa12'),
-            'role' => 'Tamu',
+            'role' => 'guest',
+            'paket' => 'Belum membeli paket',
+        ]);
+        DB::table('users')->insert([
+            'nama' => 'Admin Web',
+            'email' => 'admin@gmail.com',
+            'password' => Hash::make('yasa12'),
+            'role' => 'admin',
             'paket' => 'Belum membeli paket',
         ]);
     }

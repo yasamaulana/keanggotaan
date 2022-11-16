@@ -20,7 +20,13 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard');
+
+            if (Auth()->user()->role == 'guest') {
+                $message = "Masukan Email dan Password dengan benar";
+                return redirect()->intended('/dashboard');
+            } else {
+                return redirect()->intended('/dashboard-admin');
+            }
         }
 
         return back()->with([

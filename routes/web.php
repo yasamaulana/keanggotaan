@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BeliController;
+use App\Http\Controllers\DashadminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -36,3 +37,6 @@ Route::get('/dashboard', function () {
 Route::get('/beli', [BeliController::class, 'view'])->middleware('auth');
 Route::post('/beli', [BeliController::class, 'beli'])->middleware('auth');
 Route::get('/beli-paket/{id}', [BeliController::class, 'belipaket'])->middleware('auth');
+
+//dashboard admin
+Route::get('/dashboard-admin', [DashadminController::class, 'view'])->middleware('admin');
